@@ -1,0 +1,63 @@
+.center{
+	padding: 5%;
+	font-size: 14px;
+	box-sizing: border-box;
+}
+.welcome{
+	text-indent: 2rem;
+}
+.datum{
+	position: relative;
+	margin: 15px 0;
+	padding-left: 75px;
+	box-sizing: border-box;
+}
+.datum label{
+	position: absolute;top: 50%;left: 0;
+	margin-top: -9px;
+}
+.datum .area-txt{
+	position: absolute;top: 10px;left: 0;
+}
+.datum input,.datum textarea{
+	padding: 10px;
+	width: 100%;
+	box-sizing: border-box;
+}
+.datum .reg-capital{
+	width: 84%;
+	margin-right: 2%;
+}
+.datum textarea{
+	padding-bottom: 20px;
+	vertical-align: top;
+}
+.word-num{
+	position: absolute;bottom: 1px;right: 5px;
+	color: #999;
+	font-size: 0.8rem;
+}
+.btn-box{
+	margin: 10%;
+	text-align: center;
+}
+.btn-submit,.btn-cancel{
+	padding: 11px 15px;
+	width: 30%;
+	border-radius: 8px;
+	color: #fff;
+	box-sizing: border-box;
+}
+.btn-submit{
+	margin-right: 5%;
+	background-color: #3399fe;
+}
+.btn-cancel{
+	background-color: #bcbcbc;
+}
+@media only screen and (min-width:414px ) {
+	.datum .reg-capital{
+		width: 88%;
+		margin-right: 2%;
+	}
+}

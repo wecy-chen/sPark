@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no"/>
+  <link rel="stylesheet" href="../../css/public.css">
+  <link rel="stylesheet" href="../../css/notice.css">
+  <title>招商信息</title>
+</head>
+<body>
+<div class="notice clearfix">
+  <div class="notice-content clearfix">
+    <ul class="clearfix">
+      <li class="clearfix">
+        <a href="inversmentDetails.html">
+          <div class="dot"></div>
+          <span class="m-ellipsis spn">落实“放管服”推助企业发展</span>
+          <p>2017.02.12</p>
+        </a>
+      </li>
+      <li class="clearfix">
+        <a href="inversmentDetails.html">
+          <div class="dot"></div>
+          <span class="m-ellipsis spn">长沙经开区指导企业创新员工安全培训模式开区指导企业创新员工安全培训模式</span>
+          <p>2017.02.12</p>
+        </a>
+      </li>
+      <li class="clearfix">
+        <a href="inversmentDetails.html">
+          <div class="dot"></div>
+          <span class="m-ellipsis spn">机关第八支部开展主题党日活动</span>
+          <p>2017.02.12</p>
+        </a>
+      </li>
+      <li class="clearfix">
+        <a href="inversmentDetails.html">
+          <div class="dot"></div>
+          <span class="m-ellipsis spn">长沙经开区慰问宁向受灾群众</span>
+          <p>2017.02.12</p>
+        </a>
+      </li>
+      <li class="clearfix">
+        <a href="inversmentDetails.html">
+          <div class="dot"></div>
+          <span class="m-ellipsis spn">持续高温天气下全力协调 精准服务保障电力稳定</span>
+          <p>2017.02.12</p>
+        </a>
+      </li>
+      <li class="clearfix">
+        <a href="inversmentDetails.html">
+          <div class="dot"></div>
+          <span class="m-ellipsis spn">力量之歌经济开发区第二届员工歌手比赛</span>
+          <p>2017.02.12</p>
+        </a>
+      </li>
+      <li class="clearfix">
+        <a href="inversmentDetails.html">
+          <div class="dot"></div>
+          <span class="m-ellipsis spn">力量之歌经济开发区第二届员工歌手比赛</span>
+          <p>2017.02.12</p>
+        </a>
+      </li>
+      <li class="clearfix">
+        <a href="inversmentDetails.html">
+          <div class="dot"></div>
+          <span class="m-ellipsis spn">力量之歌经济开发区第二届员工歌手比赛</span>
+          <p>2017.02.12</p>
+        </a>
+      </li>
+      <li class="clearfix">
+        <a href="inversmentDetails.html">
+          <div class="dot"></div>
+          <span class="m-ellipsis spn">力量之歌经济开发区第二届员工歌手比赛</span>
+          <p>2017.02.12</p>
+        </a>
+      </li>
+      <li class="clearfix">
+        <a href="inversmentDetails.html">
+          <div class="dot"></div>
+          <span class="m-ellipsis spn">力量之歌经济开发区第二届员工歌手比赛</span>
+          <p>2017.02.12</p>
+        </a>
+      </li>
+      <li class="clearfix">
+        <a href="inversmentDetails.html">
+          <div class="dot"></div>
+          <span class="m-ellipsis spn">机关第八支部开展主题党日活动</span>
+          <p>2017.02.12</p>
+        </a>
+      </li>
+    </ul>
+  </div>
+  <button class="upload">加载中...</button>
+</div>
+<script src="../../js/jquery-1.8.3.min.js"></script>
+<script>
+    $(function () {
+        var flag = false;// 防止滚动条停止在底部时，触发多次scroll中的回调函数，重复加载数据
+        var isSorll = true;
+        var scrollTop = $(this).scrollTop();
+        var scrollHeight = $(document).height();
+        var windowHeight = $(this).height();
+        if (scrollHeight == windowHeight)//界面不存在scrollbar,即页面中显示的数据未填满整个页面
+        {
+            //doingsomething : ajax 加载数据
+        }
+        $(window).scroll(function () {
+            scrollTop = $(this).scrollTop();
+            scrollHeight = $(document).height();
+            windowHeight = $(this).height();
+            var ul = $('.notice-content ul');
+            if (scrollTop + windowHeight >= scrollHeight ) {
+                console.log('我到底了');//滚动到底部执行事件
+                if (flag == false) {
+                    //添加一些等待加载的动画效果
+                    $('.upload').show();
+                    if(isSorll){
+                        isSorll = false;
+                        setTimeout(function () {
+                            for (var i = 0; i < 6; i++) {
+                                var li = $('<li>');
+                                var a = $('<a>');
+                                var span = $('<span>');
+                                var p = $('<p>');
+                                var dot = $('<div>');
+                                li.appendTo(ul);
+                                a.appendTo(li);
+                                dot.appendTo(a);
+                                span.appendTo(a);
+                                p.appendTo(a);
+                                dot.addClass('dot');
+                                span.addClass('m-ellipsis spn');
+                                a.attr('href', 'announcement.html')
+                                span.html('落实“放管服”推助企业发展');
+                                p.html('2017-09-02');
+                                li.addClass('clearfix');
+                            }
+                            isSorll = true;
+                            $('.upload').hide();
+
+                        }, 2000)
+                    }
+                }
+            }
+        });
+
+//时间转换
+        function getLocalTime(nS) {
+            return new Date(parseInt(nS) * 1000).Format("yyyy-MM-dd hh:mm:ss");
+        }
+
+        Date.prototype.Format = function (fmt) {//author: meizz
+            var o = {
+                "M+": this.getMonth() + 1, //月份
+                "d+": this.getDate(), //日
+                "h+": this.getHours(), //小时
+                "m+": this.getMinutes(), //分
+                "s+": this.getSeconds(), //秒
+                "q+": Math.floor((this.getMonth() + 3) / 3), //季度
+                "S": this.getMilliseconds() //毫秒
+            };
+            if (/(y+)/.test(fmt))
+                fmt = fmt.replace(RegExp.$1, (this.getFullYear() + "").substr(4 - RegExp.$1.length));
+            for (var k in o)
+                if (new RegExp("(" + k + ")").test(fmt))
+                    fmt = fmt.replace(RegExp.$1, (RegExp.$1.length == 1) ? (o[k]) : (("00" + o[k]).substr(("" + o[k]).length)));
+            return fmt;
+        }
+        console.log(getLocalTime(1564521154000 / 1000));
+    })
+
+</script>
+</body>
+</html>

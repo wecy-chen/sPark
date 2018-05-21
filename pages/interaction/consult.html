@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>在线咨询</title>
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no"/>
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="format-detection" content="telephone=no" />
+		<meta name="apple-mobile-web-app-status-bar-style" content="black">
+		<link rel="stylesheet" href="../../css/public.css">
+		<link rel="stylesheet" type="text/css" href="../../css/interact.css"/>
+	</head>
+	<body>
+		<nav id="nav" class="wx-bar">
+			<div class="bar-box clearfix" id="input-box" style="display: block;">
+				<input type="text" id="input_answer" placeholder="写内容..." />
+				<button id="btn_commit" type="button">发送</button>
+			</div>
+		</nav>
+		<div class="wx-content">
+			<div id="scolls" class="scolls">
+				<ul id="duihua" class="duihua">
+					<li class="mede">
+						<p class="datetime"><span>9月20日&nbsp;&nbsp;15:30</span></p>
+						<span class="mine">如何完成支撑项目？<i></i></span>
+						<span class="head-portrait"><img src="../../img/own-head.png" alt="" /></span>
+					</li>
+					<li class="mede2 bottoms">
+						<span class="head-portrait"><img src="../../img/park-logo.png" alt="" /></span>
+						<span class="mine2">稍等，给您解答...<i></i></span>
+					</li>
+				</ul>
+			</div>
+		</div>
+		<script src="../../js/jquery-1.8.3.min.js"></script>
+		<script type="text/javascript">
+			jQuery(function($) {
+				var input_answer = document.getElementById("input_answer");//内容
+				var btn_commit = document.getElementById("btn_commit");//确定
+				var duihua = document.getElementById("duihua");
+				var scolls = document.getElementById("scolls");
+				var nav = document.getElementById("nav");
+				
+				var lbHeight = (document.body.scrollHeight - nav.offsetHeight -20) + 'px';//document.body.offsetHeight
+				console.log(lbHeight);
+				scolls.style.height = lbHeight;
+				
+				var inp = $("input"),
+		            win = $(window),
+		            bod = $("body"),
+		            winH = win.height();
+				input_answer.addEventListener('focus',function(){
+					var t = $(this),
+		                tTop = t.offset().top,
+		                tType = t.prop('type');
+	                    bod.height(winH);
+	                    bod.animate({scrollTop: tTop + 'px'}, 200);
+				})
+				
+				
+				btn_commit.addEventListener('click',function(){
+					var acct = input_answer.value||'';
+					if(acct==''){
+						alert('请输入内容！');
+						return;
+					}
+					//acct = encodeURIComponent(acct);
+					
+					var li = document.createElement('li');
+					li.className = 'mede';
+					li.innerHTML = '<p class="datetime"><span>9月20日&nbsp;&nbsp;15:30</span></p>'+
+									'<span class="mine">'+acct+'<i></i></span>'+
+									'<span class="head-portrait"><img src="../../img/own-head.png" alt="" /></span>';
+									
+					duihua.appendChild(li);
+					input_answer.value = '';
+				})
+			})
+
+      $(document).ready(function(){
+
+          $.ajax({
+              url:'http://192.168.10.19:8090/attractInvestment/getUserInfo'+"?id=1&callback=?",
+              dataType:'jsonp',
+              processData: false,
+              type:'get',
+              success:function(data){
+                  console.log(data);
+              },
+              error:function(XMLHttpRequest, textStatus, errorThrown) {
+                  alert(XMLHttpRequest.status);
+                  alert(XMLHttpRequest.readyState);
+                  alert(textStatus);
+              }});
+      });
+
+		</script>
+	</body>
+</html>

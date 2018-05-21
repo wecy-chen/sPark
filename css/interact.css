@@ -1,0 +1,59 @@
+body{position: relative;height: 100%;}
+.wx-bar{
+    position: fixed;
+    bottom: 10px;
+    left: 5%;
+    right: 0;
+    padding: 0;
+    width: 90%;
+    height: 40px;
+    border-radius: 5px;
+    /*table-layout: fixed;*/
+    border-top: 0;
+    border-bottom: 0;
+	-webkit-box-shadow: 0 0 1px rgba(0,0,0,.85);
+    box-shadow: 0 0 1px rgba(0,0,0,.85);
+    z-index: 100;
+}
+.bar-box {padding: 5px 8px 5px 0;display: none;box-sizing: border-box;}
+.bar-box input {float: left;width: 80%;margin-bottom: 0;height: 30px;font-size: 14px;color: #2B2B2B;border: none;padding: 10px;box-sizing: border-box;}
+.bar-box button {float: right;border: none;color: #fff;background-color: #53B3F7;height: 30px;}
+.wx-content{
+	position: relative;
+	padding-bottom: 50px;
+	margin: 0 auto;
+    height: 100%;
+	background-color: #fff;
+    box-sizing: border-box;
+}
+.duihua li{padding: 3% 10%;}
+.mine,.mine2{padding: 10px;position: relative;border-radius: 4px;display: inline-block;}
+.mede{text-align: right;}
+.mede2{text-align: left;}
+.mine{color: #333;background-color: #afe46e;}
+.mine i,.mine2 i{position: absolute;top: 40%;display: block;width: 10px;height: 10px;transform: rotate(45deg);}
+.mine i{right: -5px;background-color: #afe46e;}
+.mine2{border: 1px solid #8f8f94;color: #666;}
+.mine2 i{left: -5px;background-color: #fff;border-bottom: 1px solid #8f8f94;border-left: 1px solid #8f8f94;}
+.scolls{/*overflow-y: scroll;*/width: 100%;height: 100%;}
+
+.head-portrait{
+	display: inline-block;
+	width: 50px;
+	vertical-align: middle;
+}
+.datetime{
+	margin: 10px auto;
+	text-align: center;
+}
+.datetime span{
+	padding: 5px 10px;
+	background-color: #e0e0e0;
+	color: #fff;
+	font-size: 0.8rem;
+	border-radius: 8px;
+}
+.mede img{
+	margin-right:2%;
+}
+

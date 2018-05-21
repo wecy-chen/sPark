@@ -1,0 +1,39 @@
+.swiper-slide img{
+  width: 100%;
+}
+.viewport .icon ul {
+  float: left;
+  text-align: center;
+}
+
+.viewport .icon li {
+  width: 18%;
+  height: 18%;
+  float: left;
+  margin: 2.3% 7.6%;
+}
+
+.viewport .icon li img {
+  width: 100%;
+  height: 100%;
+}
+
+.viewport .icon li p {
+  margin: 5px 0;
+  font-size: 15px;
+  text-align: center;
+  color: #252525;
+  font-weight: 600;
+
+}
+@media only screen and (max-width:320px) {
+  html{
+    font-size: 10px;
+  }
+  .viewport .icon li p{
+    font-size: 12px;
+  }
+  .viewport .icon li{
+    margin: 2% 7.5%;
+  }
+}

@@ -1,0 +1,58 @@
+.park{
+  max-width: 640px;
+  width: 100%;
+  height: 100%;
+}
+.park .head{
+  margin: 2% 0;
+  text-align: center;
+}
+.park .head p{
+  margin: 2% 0;
+  font-size: 18px;
+  font-weight: bold;
+}
+.park .head span{
+  color: #cccccc;
+}
+.park .content {
+  margin: 1%;
+}
+.park .content img {
+  width: 100%;
+}
+.park .content .project{
+  float: left;
+  font-size: 18px;
+
+}
+.park .content .project p{
+  margin-top: 2.5%;
+  color:#35A2E7 ;
+  font-weight: 600;
+}
+.park .content .project-introduce{
+  margin-top:8%;
+
+}
+.park .content .project-introduce p{
+  color: #E61100;
+  font-weight: 600;
+  margin-bottom: 1%;
+}
+@media screen and (max-width: 320px){
+  .park .content .project{
+    font-size: 14px;
+  }
+  .park .head p{
+    font-size: 14px;
+  }
+}
+@media screen and (min-width: 640px){
+  .park .content .project{
+    font-size: 20px;
+  }
+  .park .head p{
+    font-size: 20px;
+  }
+}

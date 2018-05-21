@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no"/>
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black">
+		<title>入园申请</title>
+		<link rel="stylesheet" href="../../css/public.css">
+		<link rel="stylesheet" href="../../css/apply.css">
+	</head>
+	<body>
+		<div class="center">
+			<p>您好：</p>
+			<p class="welcome">欢迎您入驻隆平园，请您填写以下资料，我们将有工作人员和您联系，谢谢！</p>
+			<div class="datum">
+				<label class="" for="company-name">企业名称：</label>
+				<input class="" type="text" id="company-name" />
+			</div>
+			<div class="datum">
+				<label for="contacts">联&nbsp;&nbsp;系&nbsp;人：</label>
+				<input type="text" id="contacts" />
+			</div>
+			<div class="datum">
+				<label for="contact-way">联系方式：</label>
+				<input type="text" id="contact-way" maxlength="12" onkeyup="this.value=this.value.replace(/\D/g,'')" />
+			</div>
+			<div class="datum">
+				<label for="capital">注册资金：</label>
+				<input class="reg-capital" type="text" id="capital" onkeyup="clearNoNum(this);" /><span>万元</span>
+			</div>
+			<div class="datum">
+				<label for="address">注册地址：</label>
+				<input type="text" id="address" />
+			</div>
+			<div class="datum">
+				<label class="area-txt" for="range">经营范围：</label>
+				<textarea id="range" name="" rows="5" cols=""></textarea>
+				<p class="word-num"><span id="remain2">0</span>/<span id="total2">100</span></p>
+			</div>
+			<div class="datum">
+				<label class="area-txt" for="demand">需&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;求：</label>
+				<textarea id="demand" name="" rows="5" cols=""></textarea>
+				<p class="word-num"><span id="remain">0</span>/<span id="total">100</span></p>
+			</div>
+			<!--btn-->
+			<div class="btn-box">
+				<button class="btn-submit" type="button">提交</button>
+				<button class="btn-cancel" type="button">取消</button>
+			</div>
+		</div>
+<!-- 		<script src="../../js/common.js"></script>
+		<script type="text/javascript">
+			var scope = document.getElementById("range");
+			var demand = document.getElementById("demand");
+				var message = '',message2 = '';
+				var total = '',total2 = '';
+				var remain = '',remain2 = '';
+				scope.addEventListener('keypress',function(){
+					message2 = document.getElementById('range');
+					total2 = document.getElementById('total2');
+					remain2 = document.getElementById('remain2');
+					CountStrByte(message2,total2,remain2);
+				});
+				scope.addEventListener('keyup',function(){
+					message2 = document.getElementById('range');
+					total2 = document.getElementById('total2');
+					remain2 = document.getElementById('remain2');
+					CountStrByte(message2,total2,remain2);
+				});
+				demand.addEventListener('keypress',function(){
+					message = document.getElementById('demand');
+					total = document.getElementById('total');
+					remain = document.getElementById('remain');
+					CountStrByte(message,total,remain);
+				});
+				demand.addEventListener('keyup',function(){
+					message = document.getElementById('demand');
+					total = document.getElementById('total');
+					remain = document.getElementById('remain');
+					CountStrByte(message,total,remain);
+				});
+			
+			var LastCount =0;
+			function CountStrByte(Message,Total,Remain){ //字节统计
+				var ByteCount = 0;
+				var StrValue  = Message.value;
+				var StrLength = Message.value.length;
+				var MaxValue  = Total.innerHTML;
+				if(LastCount != StrLength) { // 在此判断，减少循环次数
+					for (i=0;i<StrLength;i++){
+//						ByteCount  = (StrValue.charCodeAt(i)<=256) ? ByteCount + 1 : ByteCount + 2;
+						ByteCount++;
+				      if (ByteCount>MaxValue) {
+				      	Message.setAttribute('disabled','disabled');
+				      	Message.value = StrValue.substring(0,i);
+							//mui.alert("评论内容最多不能超过 " +MaxValue+ " 个字节！",function(){
+								var v = Message.value;
+								Message.removeAttribute('disabled');
+							//});
+				         ByteCount = MaxValue;
+
+				         console.log(message)
+				         break;
+				      }
+					}
+//					   Used.value = ByteCount;
+				   Remain.innerText = ByteCount;//MaxValue - ByteCount;
+				   LastCount = StrLength;
+				}
+				
+			}
+		</script> -->
+	</body>
+</html>
